@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #87CEEB, #ffffff);
+        font-family: 'Arial', sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        background-image: url("./images/formbg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+   
+    h2 {
+      color: white;
+      font-weight: 900;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
+      text-align: center;
+      justify-content: center;
+    }
+    
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        color: black;
+    }
+    
+    label {
+        display: block;
+        margin: 15px 0 5px;
+        color: black;
+        font-weight: bold;
+    
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #87CEEB;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+     button {
+      margin-top: 1.2rem;
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #307fd9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ae8;
+    }
+    
+
+    #btn {
+      background-color: green;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    #btn a {
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+     .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .input-group select {
+    flex: 1;
+    max-width: 20%;
+    height: 40px;
+    margin-bottom: 15px;
+    border: 2px solid #87CEEB;
+        border-radius: 5px;
+   
+  }
+
+  .input-group input {
+    flex: 1;
+  }
+    </style>
+    </head>
+<body>
+    
+    <h2>Get Started</h2>
+<form action="/queryForm" method="POST" id="RecommendationForm">
+
+  <label>How many people are planning to visit:</label>
+  <div class="input-group">
+    <input type="text" name="people" id="peopleInput" placeholder="Enter the number of people" required>
+    <select onchange="document.getElementById('peopleInput').value=this.value">
+        <option value="" disabled selected>Select number of people</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3-5">3–5</option>
+        <option value="6+">6+</option>
+    </select>
+  </div>
+
+  <label>What is your budget (in ₹):</label>
+  <input type="text" name="budget" id="budgetInput" placeholder="Enter your budget" required>
+
+  <label>Approximate number of days:</label>
+  <div class="input-group">
+    <input type="text" name="days" id="daysInput" placeholder="Enter the number of days" required>
+    <select onchange="document.getElementById('daysInput').value=this.value">
+        <option value="" disabled selected>Select duration</option>
+        <option value="1-3">1–3 days</option>
+        <option value="4-7">4–7 days</option>
+        <option value="8-14">8–14 days</option>
+        <option value="15+">15+ days</option>
+    </select>
+  </div>
+
+  <label>Preferred season of visiting:</label>
+  <div class="input-group">
+    <input type="text" name="season" id="seasonInput" placeholder="Enter the season of your choice">
+    <select onchange="document.getElementById('seasonInput').value=this.value">
+        <option value="" disabled selected>Select season</option>
+        <option value="Winter">Winter</option>
+        <option value="Spring">Spring</option>
+        <option value="Summer">Summer</option>
+        <option value="Monsoon">Monsoon</option>
+        <option value="Autumn">Autumn</option>
+    </select>
+  </div>
+
+  <label>Activities you're interested in:</label>
+  <div class="input-group">
+    <input type="text" name="activities" id="activitiesInput" placeholder="Enter your preferred activities">
+    <select onchange="document.getElementById('activitiesInput').value=this.value">
+        <option value="" disabled selected>Select activity</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Relaxation">Relaxation</option>
+        <option value="Cultural">Cultural</option>
+        <option value="Nature">Nature</option>
+        <option value="Wildlife">Wildlife</option>
+        <option value="Food">Food</option>
+    </select>
+  </div>
+
+  <label>Starting location:</label>    
+  <input type="text" name="location" id="locationInput" placeholder="Enter your starting location" required>
+
+  <button type="submit">Get Recommendation</button>
+  <button id="btn"><a href="/route.html">Get The Route To Your Place</a></button>
+</form>
+
+</body>
+</html>

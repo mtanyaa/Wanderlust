@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Nearby Attractions</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f2f5, #d9e4f5);
+      margin: 0;
+      padding: 2rem;
+      background-image: url("./images/formbg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    h2 {
+      color: white;
+      font-weight: 900;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    form {
+      margin: auto;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+      border-radius: 15px;
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 1.2rem;
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ae8;
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-top: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    ul {
+      max-width: 600px;
+      margin: auto;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: white;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 700px) {
+
+      form,
+      ul {
+        padding: 1rem;
+      }
+    }
+
+    #btn {
+      background-color: green;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    #btn a {
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>🌍 Explore Nearby Attractions & Activities</h2>
+
+  <form id="placeForm" method="POST" action="/activities">
+    <label>City Name:
+      <input type="text" name="city" id="city" placeholder="Enter a city name..." >
+    </label>
+
+    <label>Activity Type:
+      <select id="type" name="type">
+        <option value="tourism.sights">Tourist Attractions</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="leisure">Leisure & Parks</option>
+      </select>
+    </label>
+
+    <button type="submit">🔍 Search Places</button>
+    <button id="btn"><a href="/modes.html">To Know About Modes of Travel Supported by the place--Click
+        here!</a></button>
+
+
+
+  </form>
+
+
+</body>
+
+</html>

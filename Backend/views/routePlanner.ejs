@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Travel Itinerary</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to right, #ffe259, #ffa751);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .result {
+      line-height: 1.7;
+      white-space: pre-wrap;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      background-color: #28a745;
+      color: white;
+      padding: 14px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Route For You</h1>
+
+  <% if (typeof route !== "undefined") { %>
+    <div class="result" id="advisoryResult"><%= route %></div>
+  <% } %>
+
+  </div>
+  
+
+  <div class="button-container">
+      <a href="/advisory.html" class="btn">Explore Hotels and Restaurants</a>
+    </div>
+
+</body>
+</html>
+
+
+
+
